@@ -40,44 +40,27 @@
                 margin: 20px;
             }
             
-            .btn3{
-	background-color: black;
-	border-radius:20px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-        margin: 40px;
-	font-family:Arial;
-	font-size:12px;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-        color: white;
-        position: relative;
-       top: 5px;
-       left: 110px;
-       
-}
-.btn4{
-	background-color: black;
-	border-radius:20px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-        margin: 40px;
-	font-family:Arial;
-	font-size:12px;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-        color: white;
-        position: relative;
-       top: 5px;
-       left: 90px;
-       
-}
+        
+
+   .bbb6{
+                background-color: black;
+                position: relative;
+                top: 20px;
+                
+                left: 130px;
+                font-size: 2rem;
+                 color: white;
+                 border-radius: 100px;
+            }
+              .bbb7{
+                background-color: black;
+                position: relative;
+                top: 20px;
+                left: 180px;
+                font-size: 2rem;
+                 color: white;
+                 border-radius: 100px;
+            }
 
 
         </style>
@@ -92,17 +75,18 @@
 
                 <div class="log">
                     <h:outputLabel id="un" value="User Name :  "/>
-                    <h:inputText id="uNameInputText" />
+                    <h:inputText id="uNameInputText" value="#{login.usern}" />
                 </div>
                 <div class="form-group">
                     <h:outputLabel value="Password : "/>
 
-                    <h:inputSecret id="pass" class="form-control" />
+                    <h:inputSecret id="pass" class="form-control" value="#{login.pass}" />
 
                 </div>
                 <div class="bt2">
-                   <a href="homePage.xhtml" class="btn3">log in</a>	
-                   <a href="user.xhtml" class="btn4">cancel</a>	
+                   
+              <h:commandButton class="bbb6" action="#{login.method1()}" value="Log in" />
+             <h:commandButton class="bbb7" value="cancel" />	
 
                 </div>
 
