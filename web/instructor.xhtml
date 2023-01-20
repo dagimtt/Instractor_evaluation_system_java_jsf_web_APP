@@ -132,20 +132,20 @@ body{
             <h2 class="add">Add Instructor</h2>
                 <div class="d1">
                     <h:outputLabel class="smane" value="   Name :  "/>
-                    <h:inputText class="snameInputText" />
+                    <h:inputText class="snameInputText" value ="#{newJSFManagedBean.iname}" />
                    
                     <h:outputLabel class="dd" value="Department :  "/>
-                    <h:inputText class="ddInputText" />
+                    <h:inputText class="ddInputText" value ="#{newJSFManagedBean.idep}" />
                      
                     <h:outputLabel class="ee" value="E-mail :  "/>
-                    <h:inputText class="eeInputText" />
+                    <h:inputText class="eeInputText" value ="#{newJSFManagedBean.email}" />
                    
                     <h:outputLabel class="ss" value="Subject :  "/>
-                    <h:inputText class="ssInputText" />
+                    <h:inputText class="ssInputText" value ="#{newJSFManagedBean.sub}"/>
                     <br></br>
                     <br></br>
                 
-                    <h:commandButton class="bbb" value="ADD" />
+                    <h:commandButton class="bbb" action="#{newJSFManagedBean.toInsert()}" value="ADD" />
                 </div>
             <div class="ff">
                  <a href="homePage.xhtml"  id="bb2" role="button">back</a>
