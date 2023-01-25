@@ -77,7 +77,7 @@
 
                 <div class="log">
                     <h:outputLabel id="un" value="User Name :  "/>
-                    <h:inputText id="uNameInputText" value="#{login.usern}" />
+                    <h:inputText  value="#{login.usern}" />
                 </div>
                 <div class="form-group">
                     <h:outputLabel value="Password : "/>
@@ -88,7 +88,7 @@
                 <div class="bt2">
                    
               <h:commandButton class="bbb6" action="#{login.method1()}" value="Log in" />
-             <h:commandButton class="bbb7" value="cancel" />	
+             <h:commandButton class="bbb7" type="reset" value="cancel" />	
 
                 </div>
 

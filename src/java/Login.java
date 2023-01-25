@@ -45,7 +45,7 @@ public class Login implements Serializable {
             ResultSet rs = ps.executeQuery();
             rs.next();
             String userType =rs.getString(1);
-            if ("Admin".equals(userType)) {
+            if ("Ad".equals(userType)) {
                 return "homePage";
             } else {
                 return "user";

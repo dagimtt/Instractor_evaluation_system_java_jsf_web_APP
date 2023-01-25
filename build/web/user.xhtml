@@ -44,18 +44,20 @@
               
               
             }
+            
+            
         </style>
     </h:head>
     <h:body>
         <h:form>
              <h:commandButton class="bbb6" action="#{newJSFManagedBean.rtInsert}" value="Evaluate" />
-             <h:commandButton class="bbb7" value="cancel" />
+             <h:commandButton class="bbb7" type="reset" value="cancel" />
              <div class="col">                   
                         <h:selectOneMenu value ="#{newJSFManagedBean.instractor}" class="form-control" >
                             <f:selectItems value ="#{newJSFManagedBean.instractorList}" />	
                         </h:selectOneMenu>
                 </div>
-            <fieldset  class="use" style="width: 700px; margin:auto; height: 550px; padding: 20px; margin-top: 50px; background-color: whitesmoke;">
+            <fieldset  class="use"  style="width: 700px; margin:auto; height: 550px; padding: 20px; margin-top: 50px; background-color: whitesmoke;">
                 <dir>
                     
                    

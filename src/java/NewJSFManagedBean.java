@@ -229,8 +229,7 @@ public class NewJSFManagedBean {
             ps.setString(5, evaluate4);
             ps.setString(6, evaluate5);
             ps.executeUpdate();
-          
-            System.err.println("success");
+         
         } catch (ClassNotFoundException | SQLException e) {
         }
     }
