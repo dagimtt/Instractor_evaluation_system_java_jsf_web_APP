@@ -38,8 +38,8 @@ public class Login implements Serializable {
     public String method1() throws SQLException, ClassNotFoundException {
         boolean num = Dagim(usern, pass);
         if (num) {
-              DBConnection dbcon = new DBConnection();
-              Connection con = dbcon.connMethod();
+            DBConnection dbcon = new DBConnection();
+            Connection con = dbcon.connMethod();
             PreparedStatement ps = con.prepareStatement("select TYPE from ADUSER where USERNAME=?");
             ps.setString(1, usern);       
             ResultSet rs = ps.executeQuery();

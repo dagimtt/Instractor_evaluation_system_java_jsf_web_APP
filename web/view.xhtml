@@ -10,6 +10,23 @@
             .ll{
                 text-align: center;
             }
+            body{
+                background-image: url("image/img8.jpg");
+                background-size: 100%
+            }
+                  td{
+                margin: 10px;
+                
+                padding: 10px;
+                background-color: bisque;
+            }
+             
+            th{
+                background-color: goldenrod;
+                margin: 10px;
+                
+                padding: 10px;
+            }
              
             </style>
     </h:head>
@@ -21,33 +38,22 @@
             <div class="ll">
                 <h2>RATING</h2>
             </div>
-            <h:dataTable id="users" columnClasses="list-column-center" value="#{bean1.getlist()}"  var="col1" >                     
+            <h:dataTable id="users"  value="#{bean1.getlist()}"  var="col1" >                     
                 <h:column>
                     <f:facet name="header">INSTRACTOR</f:facet>
                     <h:outputText value="#{col1.iname}"/>
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header" class="text-center alert-warning"> STATMENT 1 </f:facet>
+                    <f:facet name="header" class="t2"> AVERAGE EVALUATION </f:facet>
                     <h:outputText value="#{col1.evaluate1}"/> 
                 </h:column>
+                      <h:column>
+                    <f:facet name="header" class="t"> QUALITY </f:facet>
+                    <h:outputText value="#{col1.evaluate2}"/> 
+                </h:column>
 
-                <h:column>
-                    <f:facet name="header"> STATMENT 2</f:facet>
-                   <h:outputText value="#{col1.evaluate2}"/> 
-                </h:column>
-                <h:column>
-                    <f:facet name="header">STATMENT 3</f:facet>
-                   <h:outputText value="#{col1.evaluate3}"/> 
-                </h:column>
-                <h:column>
-                    <f:facet name="header">STATMENT 4</f:facet>
-                   <h:outputText value="#{col1.evaluate4}"/> 
-                </h:column>
-                <h:column>
-                  <f:facet name="header">STATMENT 5</f:facet>
-                   <h:outputText value="#{col1.evaluate5}"/> 
-                </h:column>
+                
             </h:dataTable>
     
         

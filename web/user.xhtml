@@ -16,11 +16,11 @@
              .bbb6{
                 background-color: whitesmoke;
                 position: relative;
-                top: 10px;
-                left: 800px;
-                font-size: 2rem;
+                top: 8px;
+                left: 1200px;
+                font-size: 1rem;
                  color: black;
-                  border-radius: 100px;
+                  border-radius: 50px;
             }
             .bbb6:hover {
   background: linear-gradient(#ccc2a6, #eae0c2);
@@ -31,11 +31,20 @@
               .bbb7{
                 background-color: whitesmoke;
                 position: relative;
-                top: 10px;
-                left: 900px;
-                font-size: 2rem;
+                top: 8px;
+                left: 1200px;
+                font-size: 1rem;
                  color: black;
-                 border-radius: 100px;
+                 border-radius: 50px;
+            }
+            .bbb8{
+                background-color: whitesmoke;
+                position: relative;
+                top: 8px;
+                right: 120px;
+                font-size: 1rem;
+                color: black;
+                 border-radius: 50px;
             }
             .col{
                  position: fixed;
@@ -44,19 +53,48 @@
               
               
             }
-            
-            
+            .rty{
+                 position: relative;
+                 top: 300px;
+                 left: 220px;               
+               color: black;
+              
+            }
+            .hd{
+                background-color: black;
+                  padding: 10px;
+            }
+            body{
+                margin: 0px;
+                background-color: #EAFDFC;
+            }
+           
         </style>
     </h:head>
     <h:body>
         <h:form>
-             <h:commandButton class="bbb6" action="#{newJSFManagedBean.rtInsert}" value="Evaluate" />
+            <div class="hd">
+               <h:commandButton class="bbb6" action="#{newJSFManagedBean.rtInsert}" value="Evaluate" />
              <h:commandButton class="bbb7" type="reset" value="cancel" />
+             <h:commandButton action="index.xhtml" class="bbb8"  value="Log out" /> 
+            </div>
+             
              <div class="col">                   
                         <h:selectOneMenu value ="#{newJSFManagedBean.instractor}" class="form-control" >
                             <f:selectItems value ="#{newJSFManagedBean.instractorList}" />	
                         </h:selectOneMenu>
                 </div>
+             <fieldset style="width: 200px; margin:auto; height: 160px; padding: 30px; margin-top: 20px;">
+                 <div class="rt">
+                 <h3>Rating Legend</h3>
+                 <h:outputLabel value="5 = Strongly Agree"/><br></br>
+                 <h:outputLabel value="4 = Agree"/><br></br>
+                 <h:outputLabel value="3 = Uncertain"/><br></br>
+                 <h:outputLabel value="2 = Disagree"/><br></br>
+                 <h:outputLabel value="1 = Strongly Disagree"/>
+             </div>
+             </fieldset>
+             
             <fieldset  class="use"  style="width: 700px; margin:auto; height: 550px; padding: 20px; margin-top: 50px; background-color: whitesmoke;">
                 <dir>
                     

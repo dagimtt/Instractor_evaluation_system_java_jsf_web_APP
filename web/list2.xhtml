@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>studen List</title>
+        <style>
+                         td{
+                margin: 10px;
+                
+                padding: 10px;
+                background-color: bisque;
+            }
+             
+            th{
+                background-color: goldenrod;
+                margin: 10px;
+                
+                padding: 10px;
+            }
+             .stl{
+                
+                padding: 30px;
+                font-size: 10px;
+                 background-color: black;
+            }
+            .uu{
+                
+                position: fixed;
+                top: 20px;
+                left: 1100px;
+                
+            }
+              .uu1{
+               
+                 position: fixed;
+                 top: 20px;
+                left: 1200px;
+            }
+            
+            .uu2{
+                 position: fixed;
+                 top: 20px;
+                left: 1000px;
+       
+            }
+            body{
+                margin: 0px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+         
+            <h:form>
+                <div class="stl">
+                <h:commandButton action="list1.xhtml" class="uu" value="Student List"/>
+                <h:commandButton action="list2.xhtml" class="uu1" value="Instractor List"/>
+                <h:commandButton action="delete1.xhtml" class="uu2" value="Delet"/>
+            </div>
+       
+      
+    
+           
+             
+            <div class="ll">
+                <h2>INSTRACTOR</h2>
+            </div>
+            <h:dataTable id="users" columnClasses="list-column-center" value="#{insListBean.getlist()}"  var="col1" >                     
+                <h:column>
+                    <f:facet name="header">E-MAIL</f:facet>
+                    <h:outputText value="#{col1.email}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header" class="text-center alert-warning"> NAME </f:facet>
+                    <h:outputText value="#{col1.name}"/> 
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header"> DEPARTMENT</f:facet>
+                   <h:outputText value="#{col1.depar}"/> 
+                </h:column>
+                 <h:column>
+                    <f:facet name="header"> SUBJECT</f:facet>
+                   <h:outputText value="#{col1.sub}"/> 
+                </h:column>
+             
+            </h:dataTable>
+            </h:form>
+    </h:body>
+</html>

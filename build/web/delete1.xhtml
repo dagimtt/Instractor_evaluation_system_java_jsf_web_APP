@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Delete</title>
+        <style>
+            .l1{
+                 position: relative;
+                 top: 10px;
+                left: 20px;
+       
+            }
+             .b2{
+                 position: relative;
+                 top: 10px;
+                left: 30px;
+       
+            }
+             .b1{
+                 position: relative;
+                 top: 20px;
+                left: 35px;
+       
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            
+        <fieldset class ="ccl" style="width: 300px; margin:auto; height: 100px; padding: 20px; margin-top: 200px " >
+            <div>
+                
+                <h:outputLabel class="l1" value="e-mail"/>
+                <h:inputText class="b2" value="#{newJSFManagedBean.email}" />
+                <div>
+                    <h:commandButton action="#{newJSFManagedBean.delete()}" class="b1" value="delet"/>
+                </div>
+            </div>
+            
+            </fieldset>  
+        </h:form>
+      
+    </h:body>
+</html>

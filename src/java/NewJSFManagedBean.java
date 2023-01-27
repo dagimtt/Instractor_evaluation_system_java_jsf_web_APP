@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import static javax.swing.UIManager.getString;
 
 @ManagedBean
 @SessionScoped
@@ -20,6 +21,7 @@ public class NewJSFManagedBean {
     String idep;
     String email;
     String sub;
+    String   val3 = null;
 
     public String getIname() {
         return iname;
@@ -217,18 +219,42 @@ public class NewJSFManagedBean {
     public void rtInsert() {
         
         try {
-            
+      
              DBConnection db = new DBConnection();
               Connection con = db.connMethod();
-     String sql = "Insert into RATING(INSTRACTOR,STATEMENT_1,STATEMENT_2,STATEMENT_3,STATEMENT_4,STATEMENT_5) values(?,?,?,?,?,?)";
+     String sql = "Insert into RATING(INSTRACTOR,STATEMENT_1,GR) values(?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
+      
+            Double nu1 = Double.valueOf(evaluate1);
+             Double nu2 = Double.valueOf(evaluate2);
+              Double nu3 = Double.valueOf(evaluate3);
+               Double nu4 = Double.valueOf(evaluate4);
+                Double nu5 = Double.valueOf(evaluate5);
+                
+           
+             
+            System.out.println(nu1+nu2+nu3+nu4+nu5);
+        
+            double mm = (nu1+nu2+nu3+nu4+nu5)/5;
+           
+            if(mm>=1&& mm<2.5){
+                val3 = "not good";
+            }
+            else if(mm>=2.5&&mm<4){
+                val3 = "good";  
+            }
+             else if(mm>=4&&mm<=5){
+              val3 = "very good";  
+            }
+            String va = Double.toString(mm);
+            System.out.println(va);
+            System.out.println(val3);
             ps.setString(1, instractor);
-            ps.setString(2, evaluate1);
-            ps.setString(3, evaluate2);
-            ps.setString(4, evaluate3);
-            ps.setString(5, evaluate4);
-            ps.setString(6, evaluate5);
+            ps.setString(2, va);
+            ps.setString(3, val3);
+          
             ps.executeUpdate();
+       
          
         } catch (ClassNotFoundException | SQLException e) {
         }
@@ -244,10 +270,20 @@ public class NewJSFManagedBean {
             ps.setString(1, email);
             ps.setString(2, iname);
             ps.setString(3, idep);
-             ps.setString(4, sub);
+            ps.setString(4, sub);
             ps.executeUpdate();
            
         } catch (ClassNotFoundException | SQLException e) {
         }
+    }
+    public void delete(){
+        try {
+              DBConnection obj = new DBConnection();
+              Connection conn = obj.connMethod();
+            PreparedStatement stmt=conn.prepareStatement("delete from INSTRACTOR where E_MAIL = '" + email+ "'");  
+            stmt.executeUpdate();  
+        } catch(ClassNotFoundException | SQLException sqlException){
+        }
+       
     }
 }

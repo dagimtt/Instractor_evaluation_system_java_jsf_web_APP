@@ -1,4 +1,6 @@
+
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -6,14 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.faces.bean.ManagedBean;  
-import javax.faces.bean.RequestScoped;  
-  
+import javax.faces.bean.ManagedBean;
+
 @ManagedBean
-@RequestScoped  
-public class Bean1 {
-public List<ugeter>list;  
-public List<ugeter>getlist() throws ClassNotFoundException{
+public class stdListBean {
+    public List<stdList>list;  
+public List<stdList>getlist() throws ClassNotFoundException{
     list=new ArrayList<>();
  
     try {
@@ -22,19 +22,21 @@ public List<ugeter>getlist() throws ClassNotFoundException{
       DBConnection obj = new DBConnection();
        Connection conn = obj.connMethod();
         st=conn.createStatement();
-        ResultSet rs=st.executeQuery("select * from RATING");
+        ResultSet rs=st.executeQuery("select * from DATA1");
         while(rs.next()){
-        String var1=rs.getString("INSTRACTOR");
-        String var2=rs.getString("STATEMENT_1");
-         String var3 = rs.getString("GR");
-        
+        String var1=rs.getString("STUDENT_ID");
+        String var2=rs.getString("NAME");
+        String var3=rs.getString("DEPARTMENT");
+  
       
-      list.add(new ugeter(var1,var2,var3));
+      list.add(new stdList(var1,var2,var3));
  }
         
     } catch (SQLException ex) { 
-        Logger.getLogger(ugeter.class.getName()).log(Level.SEVERE, null, ex);
+   
     }
     return list;
 }
+
+ 
 }

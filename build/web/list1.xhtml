@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>studen tList</title>
+        <style>
+                         td{
+                margin: 10px;
+                
+                padding: 10px;
+                background-color: bisque;
+            }
+             
+            th{
+                background-color: goldenrod;
+                margin: 10px;
+                
+                padding: 10px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <ui:include src="Studview.xhtml" />
+        <h:form>
+           
+       
+            <div class="ll">
+                <h2>STUDENT</h2>
+            </div>
+            <h:dataTable id="users" columnClasses="list-column-center" value="#{stdListBean.getlist()}"  var="col1" >                     
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    <h:outputText value="#{col1.id}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header" class="text-center alert-warning"> NAME </f:facet>
+                    <h:outputText value="#{col1.nam}"/> 
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header"> DEPARTMENT</f:facet>
+                   <h:outputText value="#{col1.dep}"/> 
+                </h:column>
+               
+            </h:dataTable>
+            </h:form>
+    </h:body>
+</html>
