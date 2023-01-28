@@ -4,6 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/NewJSFManagedBean.java</file>
+            <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/admin.xhtml</file>
+            <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/AddStd.java</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/view.xhtml</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/insList.java</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/Login.java</file>
@@ -11,11 +13,15 @@
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/instructor.xhtml</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/ugeter.java</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/Bean1.java</file>
+            <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/homePage.xhtml</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/student.xhtml</file>
+            <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/DBConnection.java</file>
+            <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/delete2.xhtml</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/Studview.xhtml</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/list1.xhtml</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/stdListBean.java</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/delete1.xhtml</file>
+            <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/Addins.java</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/user.xhtml</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/web/list2.xhtml</file>
             <file>file:/C:/Users/AKAM/Documents/NetBeansProjects/WebApplication5/src/java/insListBean.java</file>

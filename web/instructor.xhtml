@@ -103,6 +103,15 @@
                 font-size: 2rem;
                  color: white;
             }
+             .bbb1{
+                background-color: red;
+                position: fixed;
+                top: 480px;
+                left: 800px;
+                font-size: 2rem;
+                 color: white;
+            }
+            
             .ccl {
   background-image: url('image1//images.webp');
 }
@@ -123,23 +132,25 @@ body{
             <h2 class="add">Add Instructor</h2>
                 <div class="d1">
                     <h:outputLabel class="smane" value="   Name :  "/>
-                    <h:inputText class="snameInputText" value ="#{newJSFManagedBean.iname}" />
+                    <h:inputText class="snameInputText" value ="#{addins.name}" />
                    
                     <h:outputLabel class="dd" value="Department :  "/>
-                    <h:inputText class="ddInputText" value ="#{newJSFManagedBean.idep}" />
+                    <h:inputText class="ddInputText" value ="#{addins.dep}" />
                      
                     <h:outputLabel class="ee" value="E-mail :  "/>
-                    <h:inputText class="eeInputText" value ="#{newJSFManagedBean.email}" />
+                    <h:inputText class="eeInputText" value ="#{addins.mail}" />
                    
                     <h:outputLabel class="ss" value="Subject :  "/>
-                    <h:inputText class="ssInputText" value ="#{newJSFManagedBean.sub}"/>
+                    <h:inputText class="ssInputText" value ="#{addins.ub}"/>
                     <br></br>
                     <br></br>
+                    <h:commandButton class="bbb" value="ADD" action="#{addins.toInsert()}"  />
+              
                 
-                    <h:commandButton class="bbb" action="#{newJSFManagedBean.toInsert()}" value="ADD" />
+              
                 </div>
            
-        </fieldset>
+        </fieldset>           
         </h:form>
     </h:body>
 </html>

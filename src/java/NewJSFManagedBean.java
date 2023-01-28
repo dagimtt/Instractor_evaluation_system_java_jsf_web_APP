@@ -17,10 +17,10 @@ import static javax.swing.UIManager.getString;
 @SessionScoped
 public class NewJSFManagedBean {
 
-    String iname;
-    String idep;
-    String email;
-    String sub;
+   private String iname;
+   private String idep;
+   private String email;
+    private String sub;
     String   val3 = null;
 
     public String getIname() {
@@ -260,22 +260,7 @@ public class NewJSFManagedBean {
         }
     }
     
-    public void toInsert(){
-        try{
-        
-            DBConnection db = new DBConnection();
-              Connection con = db.connMethod();
-              String sql = "Insert into INSTRACTOR(E_MAIL,NAME,DEPARTMENT,SUBJECT) values(?,?,?,?)";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, email);
-            ps.setString(2, iname);
-            ps.setString(3, idep);
-            ps.setString(4, sub);
-            ps.executeUpdate();
-           
-        } catch (ClassNotFoundException | SQLException e) {
-        }
-    }
+    
     public void delete(){
         try {
               DBConnection obj = new DBConnection();
@@ -286,4 +271,5 @@ public class NewJSFManagedBean {
         }
        
     }
+   
 }

@@ -35,10 +35,10 @@
             
         <fieldset class ="ccl" style="width: 300px; margin:auto; height: 100px; padding: 20px; margin-top: 200px; " >
             <div>
-                <h:outputLabel class="l1" value="e-mail"/>
-                <h:inputText class="b2" value="#{newJSFManagedBean.email}" />
+                <h:outputLabel class="l1" value="ID"/>
+                <h:inputText class="b2" value="#{addStd.id}" />
                 <div>
-                    <h:commandButton action="#{newJSFManagedBean.delete()}" class="b1" value="delet"/>
+                    <h:commandButton action="#{addStd.deleteStud()}" class="b1" value="delet"/>
                     
                 </div>
             </div>

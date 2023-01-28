@@ -33,11 +33,10 @@ public List<insList>getlist() throws ClassNotFoundException{
    
     }
     return list;
-    
-    
- 
    
 }
+
+
 
 
   

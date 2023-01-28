@@ -6,6 +6,7 @@
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.faces.bean.ManagedBean;
@@ -84,6 +85,16 @@ public class AddStd implements Serializable {
             System.err.println("success");
         } catch (Exception e) {
         }
+    }
+    public void deleteStud(){
+        try {
+            DBConnection obj = new DBConnection();
+            Connection conn = obj.connMethod();
+            PreparedStatement stmt=conn.prepareStatement("delete from DATA1 where STUDENT_ID = '" + id + "'");  
+            stmt.executeUpdate();  
+        }  catch(ClassNotFoundException | SQLException sqlException){
+        }
+       
     }
     
 }
