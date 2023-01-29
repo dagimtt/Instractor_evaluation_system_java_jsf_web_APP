@@ -10,15 +10,13 @@
             .ll{
                 text-align: center;
             }
-            body{
-                background-image: url("image/img8.jpg");
-                background-size: 100%
-            }
+        
                   td{
                 margin: 10px;
                 
                 padding: 10px;
-                background-color: bisque;
+                background-color: black;
+                color: white;
             }
              
             th{
@@ -26,6 +24,9 @@
                 margin: 10px;
                 
                 padding: 10px;
+            }
+            .users{
+                width: 50%;
             }
              
             </style>
@@ -38,7 +39,7 @@
             <div class="ll">
                 <h2>RATING</h2>
             </div>
-            <h:dataTable id="users"  value="#{bean1.getlist()}"  var="col1" >                     
+            <h:dataTable class="users"  value="#{bean1.getlist()}"  var="col1" >                     
                 <h:column>
                     <f:facet name="header">INSTRACTOR</f:facet>
                     <h:outputText value="#{col1.iname}"/>
@@ -48,6 +49,11 @@
                     <f:facet name="header" class="t2"> AVERAGE EVALUATION </f:facet>
                     <h:outputText value="#{col1.evaluate1}"/> 
                 </h:column>
+                      <h:column>
+                    <f:facet name="header" class="t"> RATE </f:facet>
+                    <h:outputText value="#{col1.evaluate3}"/> 
+                </h:column>
+      
                       <h:column>
                     <f:facet name="header" class="t"> QUALITY </f:facet>
                     <h:outputText value="#{col1.evaluate2}"/> 

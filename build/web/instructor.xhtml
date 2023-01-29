@@ -94,8 +94,7 @@
                 left: 700px;
                 font-size: 1.2rem;
             }
-       
-            .bbb{
+             .bbb{
                 background-color: red;
                 position: fixed;
                 top: 480px;
@@ -103,6 +102,8 @@
                 font-size: 2rem;
                  color: white;
             }
+       
+           
              .bbb1{
                 background-color: red;
                 position: fixed;
@@ -123,10 +124,10 @@ body{
         </style>
     </h:head>
     <h:body>
-       
+        <ui:include src="homePage.xhtml" />
          <h:form>
               
-                <ui:include src="homePage.xhtml" />
+               
                 <a href="Studview.xhtml" class="myButton">List</a>
         <fieldset class ="ccl" style="width: 800px; margin:auto; height: 700px; padding: 20px; margin-top: 50px; background-color: whitesmoke; " >
             <h2 class="add">Add Instructor</h2>
@@ -144,13 +145,14 @@ body{
                     <h:inputText class="ssInputText" value ="#{addins.ub}"/>
                     <br></br>
                     <br></br>
-                    <h:commandButton class="bbb" value="ADD" action="#{addins.toInsert()}"  />
-              
+   
+                    <h:commandButton class="bbb" value="sub" action="#{addins.toInsert()}"></h:commandButton>
                 
               
                 </div>
            
-        </fieldset>           
+        </fieldset>  
+                            
         </h:form>
     </h:body>
 </html>

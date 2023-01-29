@@ -6,11 +6,16 @@
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.model.SelectItem;
+import static javax.swing.Action.NAME;
+import javax.swing.JComboBox;
 import static javax.swing.UIManager.getString;
 
 @ManagedBean
@@ -22,6 +27,7 @@ public class NewJSFManagedBean {
    private String email;
     private String sub;
     String   val3 = null;
+     String   val4 = null;
 
     public String getIname() {
         return iname;
@@ -206,23 +212,36 @@ public class NewJSFManagedBean {
        evaluate5list.add("1");
        
        
-       
-       
-       instractorList.add("mr habtamu");
-       instractorList.add("mr adugna");
-       instractorList.add("mr kolona");
-       instractorList.add("mr assembly");
+ try {
+              DBConnection obj = new DBConnection();
+              Connection conn = obj.connMethod();
+              Statement pt;
+            ResultSet r;
+          String value = "select NAME from INSTRACTOR";  
+            pt = conn.createStatement();
+             r = pt.executeQuery(value);
+           while(r.next()){
+                instractorList.add(r.getString("NAME"));
+           }
+            
+    
+        } catch(ClassNotFoundException | SQLException sqlException){
+        }
        
        
     }
     
+    
+   
+    
+    
     public void rtInsert() {
-        
+          
         try {
       
              DBConnection db = new DBConnection();
               Connection con = db.connMethod();
-     String sql = "Insert into RATING(INSTRACTOR,STATEMENT_1,GR) values(?,?,?)";
+     String sql = "Insert into RATING(INSTRACTOR,STATEMENT_1,RATE,GR) values(?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
       
             Double nu1 = Double.valueOf(evaluate1);
@@ -237,14 +256,25 @@ public class NewJSFManagedBean {
         
             double mm = (nu1+nu2+nu3+nu4+nu5)/5;
            
-            if(mm>=1&& mm<2.5){
-                val3 = "not good";
+            if(mm>=1&& mm<2){
+                val3 = "bad";
+                val4 = "🌟";
             }
-            else if(mm>=2.5&&mm<4){
-                val3 = "good";  
+            else if(mm>=2&&mm<3){
+                val3 = " not good";  
+                val4 = "🌟🌟";
             }
-             else if(mm>=4&&mm<=5){
-              val3 = "very good";  
+             else if(mm>=3&&mm<4){
+              val3 = "good"; 
+              val4 = "🌟🌟🌟"; 
+            }
+              else if(mm>=3&&mm<4){
+              val3 = "good"; 
+              val4 = "🌟🌟🌟🌟"; 
+            }
+             else if(mm>=5){
+              val3 = "perfect"; 
+              val4 = "🌟🌟🌟🌟🌟"; 
             }
             String va = Double.toString(mm);
             System.out.println(va);
@@ -252,6 +282,7 @@ public class NewJSFManagedBean {
             ps.setString(1, instractor);
             ps.setString(2, va);
             ps.setString(3, val3);
+             ps.setString(4, val4);
           
             ps.executeUpdate();
        

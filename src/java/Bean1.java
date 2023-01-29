@@ -26,10 +26,11 @@ public List<ugeter>getlist() throws ClassNotFoundException{
         while(rs.next()){
         String var1=rs.getString("INSTRACTOR");
         String var2=rs.getString("STATEMENT_1");
-         String var3 = rs.getString("GR");
+         String var3 = rs.getString("RATE");
+          String var4 = rs.getString("GR");
         
       
-      list.add(new ugeter(var1,var2,var3));
+      list.add(new ugeter(var1,var2,var3,var4));
  }
         
     } catch (SQLException ex) { 
