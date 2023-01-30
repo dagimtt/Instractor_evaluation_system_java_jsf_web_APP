@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Delete</title>
+        <style>
+            .l1{
+                 position: fixed;
+                 top: 170px;
+                left: 500px;
+       
+            }
+            .zz{
+                 position: fixed;
+                 top: 100px;
+                left: 600px;
+       
+            }
+             .b2{
+                 position: fixed;
+                 top: 170px;
+                left: 550px;
+       
+            }
+             .l12{
+                 position: fixed;
+                 top: 220px;
+                left: 490px;
+       
+            }
+             .b23{
+                  position: fixed;
+                 top: 220px;
+                left: 550px;
+       
+            }
+             .l13{
+                   position: fixed;
+                 top: 270px;
+                left: 490px;
+       
+            }
+             .b24{
+                  position: fixed;
+                 top: 270px;
+                left: 550px;
+       
+            }
+             .b1{
+                  position: fixed;
+                 top: 350px;
+                left: 600px;
+       
+       
+            }
+            .ccl{
+                background-color: gray;
+            }
+        </style>
+    </h:head>
+    <h:body>
+               <ui:include src="Studview.xhtml" />
+        <h:form>
+            
+        <fieldset class ="ccl" style="width: 600px; margin:auto; height: 300px; padding: 20px; margin-top: 20px; " >
+            <div>
+                <h3 class="zz">UPDATE</h3>
+            </div>
+            <div>
+                <h:outputLabel class="l1" value="id :"/>
+                <h:inputText class="b2" value="#{update.id}" />
+                <div>
+                <h:outputLabel class="l12" value="name :"/>
+                <h:inputText class="b23" value="#{update.name}" />
+                </div>
+                <div>
+                 <h:outputLabel class="l13" value="Department"/>
+                <h:inputText class="b24" value="#{update.dp}" />
+                </div>
+                <div>
+                    <h:commandButton action="#{update.upDateStud()}" class="b1" value="update"/>
+                    
+                </div>
+            </div>
+            
+            </fieldset>  
+        </h:form>
+      
+    </h:body>
+</html>

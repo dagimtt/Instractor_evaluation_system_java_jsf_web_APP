@@ -176,40 +176,40 @@ public class NewJSFManagedBean {
         
         
        instractorList = new ArrayList<>();
-       evaluate1list = new  ArrayList<>();
-       evaluate1list.add("5");
-       evaluate1list.add("4");
-       evaluate1list.add("3");
-       evaluate1list.add("2");
-       evaluate1list.add("1");
+         evaluate1list = new  ArrayList<>();
+            evaluate1list.add("5");
+               evaluate1list.add("4");
+                  evaluate1list.add("3");
+                    evaluate1list.add("2");
+                      evaluate1list.add("1");
        
-       evaluate2list = new ArrayList<>();
-       evaluate2list.add("5");
-       evaluate2list.add("4");
-       evaluate2list.add("3");
-       evaluate2list.add("2");
-       evaluate2list.add("1");
+                         evaluate2list = new ArrayList<>();
+                             evaluate2list.add("5");
+                              evaluate2list.add("4");
+                             evaluate2list.add("3");
+                        evaluate2list.add("2");
+                     evaluate2list.add("1");
        
-      evaluate3list = new ArrayList<>();
-       evaluate3list.add("5");
-       evaluate3list.add("4");
-       evaluate3list.add("3");
-       evaluate3list.add("2");
+                 evaluate3list = new ArrayList<>();
+                evaluate3list.add("5");
+              evaluate3list.add("4");
+            evaluate3list.add("3");
+         evaluate3list.add("2");
        evaluate3list.add("1");
-       
+   
        evaluate4list = new ArrayList<>();
-       evaluate4list.add("5");
-       evaluate4list.add("4");
-       evaluate4list.add("3");
-       evaluate4list.add("2");
-       evaluate4list.add("1");
+         evaluate4list.add("5");
+           evaluate4list.add("4");
+             evaluate4list.add("3");
+              evaluate4list.add("2");
+                evaluate4list.add("1");
        
-       evaluate5list = new ArrayList<>();
-       evaluate5list.add("5");
-       evaluate5list.add("4");
-       evaluate5list.add("3");
-       evaluate5list.add("2");
-       evaluate5list.add("1");
+                  evaluate5list = new ArrayList<>();
+                    evaluate5list.add("5");
+                      evaluate5list.add("4");
+                        evaluate5list.add("3");
+                          evaluate5list.add("2");
+                             evaluate5list.add("1");
        
        
  try {
@@ -268,8 +268,8 @@ public class NewJSFManagedBean {
               val3 = "good"; 
               val4 = "🌟🌟🌟"; 
             }
-              else if(mm>=3&&mm<4){
-              val3 = "good"; 
+              else if(mm>=4&&mm<5){
+              val3 = "very good"; 
               val4 = "🌟🌟🌟🌟"; 
             }
              else if(mm>=5){
