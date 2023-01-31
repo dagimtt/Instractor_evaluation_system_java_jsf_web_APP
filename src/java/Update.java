@@ -77,7 +77,7 @@ public class Update {
     
     
     
-    public void upDate() throws ClassNotFoundException{
+    public String upDate() throws ClassNotFoundException{
       try{
       
        DBConnection dbcon = new DBConnection();
@@ -105,9 +105,9 @@ public class Update {
       System.out.print(e);
       
       }
-       
+       return "list2.xhtml";
   }
-     public void upDateStud() throws ClassNotFoundException{
+     public String upDateStud() throws ClassNotFoundException{
       try{
       
        DBConnection dbcon = new DBConnection();
@@ -135,6 +135,6 @@ public class Update {
       System.out.print(e);
       
       }
-       
+       return "list1.xhtml";
   }
 }

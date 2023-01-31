@@ -11,8 +11,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import static javax.swing.Action.NAME;
 import javax.swing.JComboBox;
@@ -261,7 +263,7 @@ public class NewJSFManagedBean {
                 val4 = "🌟";
             }
             else if(mm>=2&&mm<3){
-                val3 = " not good";  
+                val3 = " not bad";  
                 val4 = "🌟🌟";
             }
              else if(mm>=3&&mm<4){
@@ -292,15 +294,20 @@ public class NewJSFManagedBean {
     }
     
     
-    public void delete(){
+    public String delete(){
         try {
               DBConnection obj = new DBConnection();
               Connection conn = obj.connMethod();
             PreparedStatement stmt=conn.prepareStatement("delete from INSTRACTOR where E_MAIL = '" + email+ "'");  
-            stmt.executeUpdate();  
+            stmt.executeUpdate();
+              FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "Successfully Deleted",
+                            "")); 
         } catch(ClassNotFoundException | SQLException sqlException){
         }
-       
+        return "list2.xhtml";
     }
    
 }

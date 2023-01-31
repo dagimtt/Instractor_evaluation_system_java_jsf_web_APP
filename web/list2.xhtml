@@ -74,16 +74,19 @@
             <div class="ll">
                 <h2>INSTRACTOR</h2>
             </div>
-            <h:dataTable id="users" columnClasses="list-column-center" value="#{insListBean.getlist()}"  var="col1" >                     
+            <h:dataTable id="users" columnClasses="list-column-center" value="#{insListBean.getlist()}"  var="col1" > 
+                
+                 <h:column>
+                    <f:facet name="header" class="text-center alert-warning"> NAME </f:facet>
+                    <h:outputText value="#{col1.name}"/> 
+                </h:column>
+                
                 <h:column>
                     <f:facet name="header">E-MAIL</f:facet>
                     <h:outputText value="#{col1.email}"/>
                 </h:column>
 
-                <h:column>
-                    <f:facet name="header" class="text-center alert-warning"> NAME </f:facet>
-                    <h:outputText value="#{col1.name}"/> 
-                </h:column>
+               
 
                 <h:column>
                     <f:facet name="header"> DEPARTMENT</f:facet>

@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>student</title>
         <style>
@@ -154,21 +155,24 @@ body{
             <h2 class="add">Add Student</h2>
                 <div class="d1">
                     <h:outputLabel class="smane"  value="   Name :  "/>
-                    <h:inputText class="snameInputText" value="#{addStd.name}" />
+                    <h:inputText  class="snameInputText" maxlength="20" required="true" value="#{addStd.name}" >
+                      
+                    </h:inputText>
                    
                     <h:outputLabel class="dd" value="Department :  "/>
-                    <h:inputText class="ddInputText" value="#{addStd.dep}" />
+                    <h:inputText required="true" maxlength="20" class="ddInputText" value="#{addStd.dep}" />
                      
                     <h:outputLabel class="ee" value="Student ID :  "/>
-                    <h:inputText class="eeInputText" value="#{addStd.id}" />
+                    <h:inputText required="true" maxlength="10" class="eeInputText" value="#{addStd.id}" />
                    
                     <h:outputLabel class="ss" value="User Name :  "/>
-                    <h:inputText class="ssInputText" value="#{addStd.uname}" />
+                    <h:inputText required="true" class="ssInputText" value="#{addStd.uname}" />
                    
-                    <h:outputLabel class="pp" value="Password :  "/>
-                    <h:inputSecret class="ppInputText"   />
-                    <h:outputLabel class="pp5" value="Confirm Password : " />
-                    <h:inputSecret class="pp5InputText"  value="#{addStd.pass}" />
+                    <h:outputLabel class="pp"  value="Password : " />
+                    <h:inputSecret required="true" requiredMessage="must contain atleast 8 characters" maxlength="10" class="ppInputText" size="20" value="#{addStd.pass}" >
+                    <f:validateLength minimum="8" ></f:validateLength>
+                    </h:inputSecret>
+                    <h:message for="inputpass" styleClass="error"/>
                     <h:commandButton class="bbb" action="#{addStd.toInsert}" value="ADD" /> 
                   
                 </div>

@@ -10,6 +10,7 @@
                  position: relative;
                  top: 10px;
                 left: 20px;
+                color: white;
        
             }
              .b2{
@@ -27,12 +28,20 @@
             .ccl{
                 background-color: gray;
             }
+            .del{
+                color: red;
+                position: fixed;
+                left: 600px;
+                top: 100px;
+                background-color: black;
+             
+            }
         </style>
     </h:head>
     <h:body>
                <ui:include src="Studview.xhtml" />
         <h:form>
-            
+            <h1 class="del">DELETE</h1>
         <fieldset class ="ccl" style="width: 300px; margin:auto; height: 100px; padding: 20px; margin-top: 200px; " >
             <div>
                 <h:outputLabel class="l1" value="e-mail"/>

@@ -69,16 +69,19 @@
             <div class="ll">
                 <h2>STUDENT</h2>
             </div>
-            <h:dataTable id="users" columnClasses="list-column-center" value="#{stdListBean.getlist()}"  var="col1" >                     
+            <h:dataTable id="users" columnClasses="list-column-center" value="#{stdListBean.getlist()}"  var="col1" > 
+                
+                 <h:column>
+                    <f:facet name="header" class="text-center alert-warning"> NAME </f:facet>
+                    <h:outputText value="#{col1.nam}"/> 
+                </h:column>
+                
                 <h:column>
                     <f:facet name="header">ID</f:facet>
                     <h:outputText value="#{col1.id}"/>
                 </h:column>
 
-                <h:column>
-                    <f:facet name="header" class="text-center alert-warning"> NAME </f:facet>
-                    <h:outputText value="#{col1.nam}"/> 
-                </h:column>
+               
 
                 <h:column>
                     <f:facet name="header"> DEPARTMENT</f:facet>

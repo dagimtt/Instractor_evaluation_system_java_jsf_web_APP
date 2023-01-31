@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 
 
@@ -66,7 +68,11 @@ public class Addins {
             ps.setString(3, dep);
             ps.setString(4, ub);
             ps.executeUpdate();
-           
+             FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "Successfully Inserted",
+                            "")); 
         } catch (ClassNotFoundException | SQLException e) {
         }
     }

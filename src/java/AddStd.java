@@ -9,8 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 @SessionScoped
@@ -67,7 +69,7 @@ public class AddStd implements Serializable {
     
     public void toInsert(){
         try{
-        
+    
             DBConnection db = new DBConnection();
               Connection con = db.connMethod();
               String sql1 = "Insert into DATA1(STUDENT_ID,NAME,DEPARTMENT) values(?,?,?)";
@@ -82,19 +84,28 @@ public class AddStd implements Serializable {
             ps1.setString(2, pass);
             ps1.setString(3, "student");
             ps1.executeUpdate();
-            System.err.println("success");
-        } catch (Exception e) {
+             FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "Successfully Inserted",
+                            "")); 
+        } catch (ClassNotFoundException | SQLException e) {
         }
     }
-    public void deleteStud(){
+    public String deleteStud(){
         try {
             DBConnection obj = new DBConnection();
             Connection conn = obj.connMethod();
             PreparedStatement stmt=conn.prepareStatement("delete from DATA1 where STUDENT_ID = '" + id + "'");  
             stmt.executeUpdate();  
+              FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "Successfully Deleted",
+                            "")); 
         }  catch(ClassNotFoundException | SQLException sqlException){
         }
-       
+        return "list1.xhtml";
     }
     
 }
